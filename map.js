@@ -182,10 +182,11 @@ function getRoutes() {
 
 
 function handleFiles() {
+	console.log("handleFiles");
 	$(document).ready(function() {
 		$.ajax({
 			type: "GET",
-			url: "C:\Users\Chris\Desktop\BobcatCommute\HTTP\googleha_transit\shapes_smalltest.txt",
+			url: "googleha_transit\shapes_smalltest.txt",
 			dataType: "csv",
 			success: function(data) {processData(data);}
 		 });
@@ -193,6 +194,7 @@ function handleFiles() {
 };
 
 function processData(allText) {
+	console.log("processData");
     var allTextLines = allText.split(/\r\n|\n/);
     var headers = allTextLines[0].split(',');
     var lines = [];
